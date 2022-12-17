@@ -2,7 +2,7 @@
 // divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요.
 const solution = (arr, divisor) => {
   const divisible = [];
-  let indivisible = [-1];
+  const indivisible = [-1];
 
   arr.map((value) => {
     if (value % divisor === 0) {
