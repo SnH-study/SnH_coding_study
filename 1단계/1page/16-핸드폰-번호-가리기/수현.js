@@ -1,8 +1,3 @@
 const solution = (phone_number) => {
-  let length = phone_number.length;
-  let answer = phone_number.split('').reverse().slice(0, 4).join();
-
-  console.log(answer);
+  return phone_number.split('').reverse().fill('*', 4).reverse().join('');
 };
-
-// 다시 풀기..
