@@ -1,20 +1,15 @@
 function solution(sizes) {
-    let widthArr = [];
-    let heightArr = [];
     
-    sizes.map((c) => {
-        widthArr.push(c[0])
-        heightArr.push(c[1])
-    })
+    const sortArr = sizes.map(i => i.sort((a,b) => b-a))
+
+    let maxArr = [];
+    let minArr = [];
     
-    const widthMax = widthArr.sort((a,b) => b-a)[0]
-    const heightMax = heightArr.sort((a,b) => b-a)[0]
-    const maxArr = [widthMax,heightMax]
-    let arr2 = []
+    sortArr.map(i => maxArr.push(i[0]))
+    sortArr.map(i => minArr.push(i[1]))
     
-    sizes.map((i) => {
-        arr2.push(Math.min.apply(null, i));
-    })
+    const maxSort = maxArr.sort((a,b) => b-a)[0]
+    const minSort = minArr.sort((a,b) => b-a)[0]
     
-    return Math.max.apply(null, maxArr) * Math.max.apply(null,arr2)
+    return maxSort * minSort
 }
