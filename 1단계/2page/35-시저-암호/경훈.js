@@ -1,19 +1,23 @@
 function solution(s, n) {
-    let answer = []
-    for(let i = 0; i<s.length; i++){
-        if((s[i].charCodeAt(0) + n > 64 &&
-            s[i].charCodeAt(0) + n < 91 &&
-            s[i].charCodeAt(0) !== 32) ||
-          (s[i].charCodeAt(0) + n >96
-           && s[i].charCodeAt(0) + n <123
-          && s[i].charCodeAt(0) !== 32)){
-            answer.push(s[i].charCodeAt(0) + n)
-        }else if((s[i].charCodeAt(0) + n > 90 && s[i].charCodeAt(0) + n < 97) ||
-                (s[i].charCodeAt(0) + n > 122)) {
-            answer.push(s[i].charCodeAt(0) + n - 26)
-        }else {
-            answer.push(32)
+    let arr = s.split('').map(i => i.charCodeAt(0))
+    
+    for(let i = 0; i<arr.length; i++){
+        if(arr[i] == 32){
+            arr[i] = 32
+        }else if(arr[i] > 64 && arr[i] < 91){
+            if(arr[i] + n > 64 && arr[i] + n < 91){
+                arr[i] = arr[i] + n
+            }else{
+                arr[i] = arr[i] + n - 26
+            }
+        }else if(arr[i] > 96 && arr[i] < 123){
+            if(arr[i] + n > 96 && arr[i] + n < 123){
+                arr[i] = arr[i] + n
+            }else {
+                arr[i] = arr[i] + n - 26
+            }
         }
     }
-    return answer.map(i => String.fromCharCode(i)).join('')
+    
+    return arr.map(i => String.fromCharCode(i)).join('')
 }
