@@ -18,6 +18,6 @@ function solution(s, n) {
             }
         }
     }
-    
+
     return arr.map(i => String.fromCharCode(i)).join('')
 }
