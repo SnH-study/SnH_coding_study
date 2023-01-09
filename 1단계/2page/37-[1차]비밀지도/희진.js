@@ -16,9 +16,42 @@ function solution(n, arr1, arr2) {
       }
   }
                           )
-  
-  
-  // let test = answer.map(item => item.replaceAll(0,' ').replaceAll(1,'#'))
-//     .replaceAll(0,' ').replaceAll(1,'#')
   return test
+}
+
+// 위 ) 첫번째 시도 미완성 풀이
+
+// 아래 ) 두번째 시도 정답 
+
+
+function solution(n, arr1, arr2) {
+  let arr1_2 = arr1.map(item =>{ 
+    if(item.toString(2).length < n){
+    return '0'.repeat(n-item.toString(2).length)+item.toString(2)  
+    }else {
+        return item.toString(2)
+    }
+  })
+  
+  let arr2_2 = arr2.map(item =>{ 
+    if(item.toString(2).length < n){
+    return '0'.repeat(n-item.toString(2).length)+item.toString(2)  
+    }else {
+        return item.toString(2)
+    }
+  })
+  
+  console.log('arr1_2',arr1_2)
+  console.log('arr2_2',arr2_2)
+  
+  let test = []
+  
+  for (let i = 0 ; i < n ; i++) {
+      for(let j = 0 ; j < n ; j++) {
+          (arr2_2[i][j] | arr1_2[i][j]) ? test.push('#') : test.push(' ')
+      }
+      test.push(0)
+  }
+  
+  return test.join('').split('0').slice(0,-1)
 }
