@@ -12,10 +12,10 @@ function solution(nums) {
 }
 
 const confirmFunc = (sum) => {
-  for(let z = 2; z<=Math.ceil(Math.sqrt(sum)); z++){
-      if(sum % z == 0){
-          return false
-      }
-  }
-  return true
+    for(let z = 2; z<=Math.ceil(Math.sqrt(sum)); z++){
+        if(sum % z == 0){
+            return false
+        }
+    }
+    return true
 }

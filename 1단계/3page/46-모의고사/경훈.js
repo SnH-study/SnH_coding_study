@@ -8,9 +8,9 @@ function solution(answers) {
   let count3 = 0;
 
   for(let i = 0; i<answers.length; i++){
-      if(answers[i] == a[i%5]) count1++;
-      if(answers[i] == b[i%8]) count2++;
-      if(answers[i] == c[i%10]) count3++;
+    if(answers[i] == a[i%5]) count1++;
+    if(answers[i] == b[i%8]) count2++;
+    if(answers[i] == c[i%10]) count3++;
   }
   
   let answer = []
