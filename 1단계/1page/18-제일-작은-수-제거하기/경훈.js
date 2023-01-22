@@ -1,6 +1,6 @@
 function solution(arr) {
-  arr.sort((a,b) => b-a).pop()
-  return arr.sort((a,b) => b-a).length == 0 ? [-1] : arr.sort((a,b) => b-a);
+  let min = Math.min(...arr)
+  arr.splice(arr.indexOf(min), 1);
+  if(arr.length == 0) return [-1]
+  return arr
 }
-
-// 이거 왜 안되는거야~~~~
