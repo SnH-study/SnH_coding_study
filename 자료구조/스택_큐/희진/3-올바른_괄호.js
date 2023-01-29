@@ -4,13 +4,14 @@ function solution1(s) {
   let arr = s.split('')
 
   for (let i = 0; i < arr.length; i++) {
-    arr[i].includes("(") ? count++ : count--
+    arr[i].includes("(") ? count++ : count--;
     if (count < 0) {
       return false;
     }
   }
 
-  if (arr[0] !== '(' || arr[arr.length - 1] !== ')' || arr.length % 2 !== 0) return false
+  if (arr[0] !== "(" || arr[arr.length - 1] !== ")" || arr.length % 2 !== 0)
+    return false;
 
   return answer;
 }
