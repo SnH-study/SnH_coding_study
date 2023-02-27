@@ -18,4 +18,4 @@ const solution = (priorities, location) => {
   }
 };
 solution([2, 1, 3, 2], 2); // 1
-// solution([1, 1, 9, 1, 1, 1], 0); // 5
+//solution([1, 1, 9, 1, 1, 1], 0); // 5
