@@ -1,3 +1,4 @@
+// 코드 추후 Perf (급하게 품)
 function solution(word) {
   let arr = word.split('').map((i) => {
     switch (i) {
