@@ -22,6 +22,7 @@ function solution(numbers) {
       console.log('s : ', s);
       if (nums.has(Number(s)) === false) {
         nums.add(Number(s));
+        console.log(s);
         if (isPrimeNum(Number(s))) {
           answer++;
         }
@@ -30,9 +31,9 @@ function solution(numbers) {
     if (a.length > 0) {
       for (let i = 0; i < a.length; i++) {
         let t = a.slice(0);
+        console.log(t);
         t.splice(i, 1);
-        console.log('t : ', t);
-        console.log('a[i] : ', a[i]);
+        console.log(t);
         getPermutation(t, s + a[i]);
       }
     }
