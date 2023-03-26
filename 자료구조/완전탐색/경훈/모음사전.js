@@ -1,5 +1,10 @@
 // 코드 추후 Perf (급하게 품)
 function solution(word) {
+  // AAAAA -> AAAAE = 1
+  // AAAA -> AAAE = 6
+  // AAA -> AAE = 31
+  // AA -> AE = 156
+  // A -> E = 781
   let arr = word.split('').map((i) => {
     switch (i) {
       case 'A':

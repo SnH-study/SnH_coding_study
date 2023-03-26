@@ -30,7 +30,7 @@ function solution(numbers) {
     }
     if (a.length > 0) {
       for (let i = 0; i < a.length; i++) {
-        let t = a.slice(0);
+        let t = a.slice();
         console.log(t);
         t.splice(i, 1);
         console.log(t);
